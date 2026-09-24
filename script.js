@@ -62,3 +62,23 @@ document.addEventListener("DOMContentLoaded", setActiveLink);
 
 // Start the typing effect
 document.addEventListener("DOMContentLoaded", typeText);
+
+
+// Mobile menu toggle
+const menuIcon = document.getElementById("menu-icons");
+const navbar = document.querySelector(".navbar");
+
+menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("open");
+    menuIcon.classList.toggle("bx-x");
+    menuIcon.classList.toggle("bx-menu");
+});
+
+// Close the menu after tapping a link
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        navbar.classList.remove("open");
+        menuIcon.classList.remove("bx-x");
+        menuIcon.classList.add("bx-menu");
+    });
+});
