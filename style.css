@@ -75,6 +75,10 @@ a{
 .logo span.name{
     padding-top: 8px;
 }
+.navbar {
+    display: flex;
+    align-items: center;
+}
 
 .navbar a {
     font-size: 1.8rem;
@@ -83,12 +87,13 @@ a{
     font-weight: 700;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
+    padding-bottom: 4px;
 }
 
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
-    border-bottom: .1875rem solid var(--main-color);
+    border-bottom-color: var(--main-color);
 }
 
 #menu-icons{
@@ -200,7 +205,7 @@ section{
 }
 
 .homescrollbox{
-    background-color: var(--main-color);
+    background-color: var(--main-colormaincolor);
     color: black;
     width: 36px;
     height: 36px;
@@ -357,14 +362,145 @@ svg path{
     justify-content: space-around;
 }
 
-article{
+article {
     display: flex;
-    width: 10rem;
-    justify-content: space-around;
-    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    width: 16rem;
+    gap: 1rem;
+}
 
+article img {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+}
+
+article h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+article p {
+    margin: 0;
+    font-size: 1.1rem;
 }
 
 article .icon{
     cursor: default;
+}
+
+.projtitle {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#projects {
+    position: relative;
+}
+
+.projectgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.projectcard {
+    padding: 2rem;
+    border: 0.1rem solid black;
+    border-radius: 2rem;
+    background: var(--bg-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectcard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.projectcard h3 {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    color: var(--main-color);
+}
+
+.projectcard p {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tags span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.4rem 1.2rem;
+    border: 0.1rem solid var(--main-color);
+    border-radius: 2rem;
+    color: var(--main-color);
+}
+
+.contacttitle {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.contactsub {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+#contact {
+    position: relative;
+}
+
+.contactgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.contactcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 0.1rem solid black;
+    border-radius: 2rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactcard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.contactcard i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.contactcard h3 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+}
+
+.contactcard p {
+    font-size: 1.4rem;
+    margin: 0;
+    word-break: break-all;
 }
