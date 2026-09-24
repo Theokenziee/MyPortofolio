@@ -81,8 +81,8 @@ a{
     color: var(--text-color);
     margin-left: 4rem;
     font-weight: 700;
-    transition: 0.3, ease;
-    border-bottom: 3px, solid, transparent;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
 }
 
 .navbar a:hover,
@@ -200,7 +200,7 @@ section{
 }
 
 .homescrollbox{
-    background-color: var(--main-colormain-color);
+    background-color: var(--main-color);
     color: black;
     width: 36px;
     height: 36px;

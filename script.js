@@ -32,5 +32,33 @@ function typeText() {
     setTimeout(typeText, isDeleting ? deletingSpeed : typingSpeed);
 }
 
+// Highlight the nav link of the section currently in view
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".navbar a");
+
+function setActiveLink() {
+    // Trigger a bit before a section reaches the top, to account for the fixed header
+    const scrollPos = window.scrollY + window.innerHeight / 3;
+    let currentId = sections.length ? sections[0].id : "home";
+
+    sections.forEach(section => {
+        if (scrollPos >= section.offsetTop) {
+            currentId = section.id;
+        }
+    });
+
+    // If the user hit the bottom of the page, highlight the last section
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+        currentId = sections[sections.length - 1].id;
+    }
+
+    navLinks.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + currentId);
+    });
+}
+
+window.addEventListener("scroll", setActiveLink);
+document.addEventListener("DOMContentLoaded", setActiveLink);
+
 // Start the typing effect
 document.addEventListener("DOMContentLoaded", typeText);
